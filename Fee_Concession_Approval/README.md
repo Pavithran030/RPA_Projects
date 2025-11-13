@@ -83,48 +83,48 @@ The **Fee Concession Approval Process** is a robust RPA solution built with UiPa
          ↓
 ┌─────────────────────────────────────────────────────────┐
 │                    MAIN.XAML                            │
-│  ┌──────────────────────────────────────────────────┐  │
-│  │  Read MasterData, Form Responses, Concession     │  │
-│  │  Types from Google Sheets                        │  │
-│  └─────────────────────┬────────────────────────────┘  │
+│  ┌──────────────────────────────────────────────────┐   │
+│  │  Read MasterData, Form Responses, Concession     │   │
+│  │  Types from Google Sheets                        │   │
+│  └─────────────────────┬────────────────────────────┘   │
 │                        │                                │
-│        ┌───────────────┴───────────────┐               │
-│        │  For Each Student Request     │               │
-│        └───────────────┬───────────────┘               │
+│        ┌───────────────┴───────────────┐                │
+│        │  For Each Student Request     │                │
+│        └───────────────┬───────────────┘                │
 │                        ↓                                │
-│  ┌──────────────────────────────────────────────────┐  │
-│  │     PROCESS_SINGLE_STUDENT.XAML                  │  │
-│  │  ┌────────────────────────────────────────────┐  │  │
-│  │  │  • Extract & Validate Student ID           │  │  │
-│  │  │  • Lookup Student in Master Data           │  │  │
-│  │  │  • Get Concession Type & Amount            │  │  │
-│  │  │  • Check Eligibility (Count < 3)           │  │  │
-│  │  └────────────┬───────────────────────────────┘  │  │
-│  │               │                                   │  │
-│  │    ┌──────────┴──────────┐                       │  │
-│  │    ↓                     ↓                       │  │
-│  │ APPROVED             REJECTED                    │  │
-│  │    │                     │                       │  │
-│  │    ↓                     ↓                       │  │
-│  │ ┌──────────────────┐  Send Rejection Email      │  │
-│  │ │ APPROVAL_        │                             │  │
-│  │ │ GENERATION.XAML  │                             │  │
-│  │ │ • Copy Template  │                             │  │
-│  │ │ • Replace Data   │                             │  │
-│  │ │ • Save Document  │                             │  │
-│  │ └────────┬─────────┘                             │  │
-│  │          ↓                                        │  │
-│  │ ┌──────────────────┐                             │  │
-│  │ │ SEND_EMAIL.XAML  │←────────────────────────────│  │
-│  │ │ • Send via Gmail │                             │  │
-│  │ │ • Attach Letter  │                             │  │
-│  │ └──────────────────┘                             │  │
-│  └──────────────────────────────────────────────────┘  │
+│  ┌──────────────────────────────────────────────────┐   │
+│  │     PROCESS_SINGLE_STUDENT.XAML                  │   │
+│  │  ┌────────────────────────────────────────────┐  │   │
+│  │  │  • Extract & Validate Student ID           │  │   │
+│  │  │  • Lookup Student in Master Data           │  │   │
+│  │  │  • Get Concession Type & Amount            │  │   │
+│  │  │  • Check Eligibility (Count < 3)           │  │   │
+│  │  └────────────┬───────────────────────────────┘  │   │
+│  │               │                                  │   │
+│  │    ┌──────────┴──────────┐                       │   │
+│  │    ↓                     ↓                       │   │
+│  │ APPROVED             REJECTED                    │   │
+│  │    │                     │                       │   │
+│  │    ↓                     ↓                       │   │
+│  │ ┌──────────────────┐  Send Rejection Email       │   │
+│  │ │ APPROVAL_        │                             │   │
+│  │ │ GENERATION.XAML  │                             │   │
+│  │ │ • Copy Template  │                             │   │
+│  │ │ • Replace Data   │                             │   │
+│  │ │ • Save Document  │                             │   │
+│  │ └────────┬─────────┘                             │   │
+│  │          ↓                                       │   │
+│  │ ┌──────────────────┐                             │   │
+│  │ │ SEND_EMAIL.XAML  │←────────────────────────────│   │
+│  │ │ • Send via Gmail │                             │   │
+│  │ │ • Attach Letter  │                             │   │
+│  │ └──────────────────┘                             │   │
+│  └──────────────────────────────────────────────────┘   │
 │                        │                                │
 │                        ↓                                │
-│  ┌──────────────────────────────────────────────────┐  │
-│  │  Write Updated MasterData to Google Sheets       │  │
-│  └──────────────────────────────────────────────────┘  │
+│  ┌──────────────────────────────────────────────────┐   │
+│  │  Write Updated MasterData to Google Sheets       │   │
+│  └──────────────────────────────────────────────────┘   │
 └─────────────────────────────────────────────────────────┘
          │
          ↓
