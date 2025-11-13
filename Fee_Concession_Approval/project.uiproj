@@ -1,0 +1,6 @@
+{
+  "Name": "Fees_Concession_Approval",
+  "ProjectType": "Process",
+  "Description": "This is an automated fee concession approval system that reads student requests from Google Forms, validates their eligibility (max 3 concessions per student), generates personalized approval/rejection letters, sends them via email, and updates the student database - all automatically without manual intervention.",
+  "MainFile": "Main.xaml"
+}
